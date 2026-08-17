@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Live Quiz</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+
+    <div id="landing" class="screen">
+        <div class="card">
+            <h1>Live Quiz</h1>
+            <p class="subtitle">Real-time quiz rounds for study groups and review sessions</p>
+            <button id="host-btn" class="primary">Host a quiz</button>
+            <div class="divider">or</div>
+            <input id="join-name" type="text" placeholder="Your name" maxlength="20" />
+            <input id="join-code" type="text" placeholder="Room code" maxlength="4" />
+            <button id="join-btn">Join a quiz</button>
+        </div>
+    </div>
+
+    <div id="host-lobby" class="screen hidden">
+        <div class="card">
+            <h1>Room code</h1>
+            <div id="room-code-display" class="room-code"></div>
+            <p class="subtitle">Share this code with students</p>
+            <h2>Players joined</h2>
+            <ul id="host-player-list" class="player-list"></ul>
+            <button id="start-quiz-btn" class="primary">Start quiz</button>
+        </div>
+    </div>
+
+    <div id="student-lobby" class="screen hidden">
+        <div class="card">
+            <h1>You're in</h1>
+            <p class="subtitle">Waiting for the host to start...</p>
+        </div>
+    </div>
+
+    <div id="quiz-screen" class="screen hidden">
+        <div class="quiz-card">
+            <div class="quiz-header">
+                <span id="q-progress"></span>
+                <span id="q-timer"></span>
+            </div>
+            <h2 id="q-text"></h2>
+            <div id="q-options" class="options-grid"></div>
+            <div id="answer-status"></div>
+        </div>
+    </div>
+
+    <div id="results-screen" class="screen hidden">
+        <div class="card">
+            <h1 id="results-title">Question result</h1>
+            <ol id="leaderboard" class="leaderboard"></ol>
+            <button id="host-next-btn" class="primary hidden">Next question</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>
